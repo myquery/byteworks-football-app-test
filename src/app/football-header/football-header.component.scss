@@ -1,0 +1,222 @@
+@import "../../styles.scss";
+
+
+
+.football-header{
+    // position: relative;;
+    width: 100%;
+    height: 25px;
+    top: 0px;
+    left: 0px;
+    background:$bkg;
+    display: flex;
+    justify-content: center;
+  
+
+    .top-header{
+        width:70%;
+        padding: 0px;
+        
+                    
+                    
+
+        ul{
+            font-size: 10px;
+            font-style: normal;
+            font-weight: normal;
+            padding: 5px;
+         
+                    
+            li{
+                display: inline;
+                margin-right: 10px;
+                color: $txt-color ;
+                &:nth-last-child(-n+2){
+                    border-left: 1px solid  $txt-color;
+                    padding-left: 10px;
+                }
+                &:hover{
+                    color:$white;
+                }
+                .currency{
+                    color:$currecy;
+                }
+               
+            }
+        }
+    
+
+    }
+   
+
+    
+}
+.football-nav{
+    width: 100%;
+    max-width:100%;
+    height: 82px;
+    border-bottom:1px solid $border-line;
+    display: flex;
+    justify-content: center;
+   
+    
+
+    .logo-container{
+    //position: absolute;
+    width: 70%;
+  
+    ul{
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+      
+        text-align: right;
+       
+        li{
+            color: $logo-text;
+            display: inline-block;
+            list-style-type: none;
+            padding: 5% 1%;
+            
+        }
+
+    }
+
+    .logo{
+            
+        img{
+            // width:50%;
+            position: relative;
+            top: 10px;
+            left:10px;
+        }
+        
+    }
+   
+
+}
+        
+}
+.dropdown-header{
+   
+    width: 100%;
+    height: 38px;
+    left: 0px;
+    background: $white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    padding: 0px;
+    color: $bkg;
+    display: flex;
+    justify-content: center;
+    
+    
+    .header-list{
+        width: 70%;
+        max-width: 100%;
+        //margin: 0 auto;
+       // text-align: center; 
+        height: 38px;
+        padding-left: 10px !important;
+       
+      
+        li{
+            list-style: none;
+            display: inline;
+            padding: 0.8% 2%;
+            border-left:1px solid $border-line;
+            font-weight: 600;
+            font-size: 11.5px;
+            color: $bkg;
+            // position: relative;
+            text-decoration: none;
+            transition-duration: 0.5s;
+             &:nth-last-child(1){
+                border-right:1px solid $border-line;
+                width: 24%;
+            }
+         
+            .search {
+                padding: 0px;
+              }
+              
+              input {
+                border: none;
+                color: white;
+                font-size: 14px;
+                width:100%;
+                max-width: 100%;
+              }
+              
+              .fa-search {
+                position: relative;
+                left: -20px;
+              }
+
+            ul{
+                //text-align: center;
+                //display: block; 
+                div{
+                      
+                       
+                     li{
+                        font-family: 'Courier New', Courier, monospace; 
+                       
+                 }
+                }
+            
+            }
+
+        }
+    }
+  
+
+        //dropdowm menu
+        a {
+            text-decoration: none;
+          }
+          
+          nav {
+              font-family: monospace;
+          }
+          
+                   
+          li a {
+            color: $bkg;
+          }
+          
+          li:hover {
+            //   background: red;
+              cursor: pointer;
+              
+          }
+          
+          ul li ul {
+              background: $white;
+              visibility: hidden;
+              opacity: 0;
+              min-width: 50rem;
+              height:18rem;
+              position: absolute;
+              transition: all 0.5s ease;
+              margin-top: 0.9rem;
+              left: -5.5rem;
+              display: none;
+              border-bottom: 2px solid $currecy;
+              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+              padding: 20px;
+              margin-left: 21%;
+           
+          }
+          
+          ul li:hover > ul,
+          ul li ul:hover {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+          }
+          
+          ul li ul li {
+              clear: both;
+            width: 100%;
+          }
+}
