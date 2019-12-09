@@ -27,7 +27,7 @@ export class SessionActions {
   };
 
   listOneCompetition(year) {
-    this.ngRedux.dispatch({ type: SessionActions.LIST_ONE_COMPETITION, payload:year });
+    this.ngRedux.dispatch({ type: SessionActions.LIST_ONE_COMPETITION});
   };
 
   listAllTeams() {

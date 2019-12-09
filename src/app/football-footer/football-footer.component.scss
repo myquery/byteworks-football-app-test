@@ -51,10 +51,11 @@
              .footer-menu-left{
                 background: $bkg;
                 width: 50%;
+              
                 .menu-left-text{
                
                    color: #fff;
-                   height: 70%;
+                   height: 80%;
                    text-align: center;
                    padding: 3%;
                    ul{
@@ -86,6 +87,8 @@
                     font-style: normal;
                     font-size: 11px; 
                     color: white;
+                    //margin-top: 10%;
+                    
                     p{
                         
                         padding:2% 20%;
@@ -101,7 +104,7 @@
             }
             .footer-menu-right{
                 background: $currecy; 
-               
+                             
                 .footer-logo{
                 //    position: relative;
                    margin: 10%;

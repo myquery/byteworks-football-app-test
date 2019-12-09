@@ -1,4 +1,23 @@
 .section-body{
     height: 400px;
     margin: 0 auto;
+    .top-badge{
+        position: absolute;
+        width: 100%;
+        height: 132px;
+        left: 0px;
+        top: 145px;
+
+        background: linear-gradient(359.71deg, #FFFFFF -164.45%, rgba(255, 255, 255, 0) 17.36%), rgba(33, 35, 44, 0.9);
+        mix-blend-mode: normal;
+        background-size:cover;
+
+        @media screen and(max-width:450px){
+            top: 200px;
+            height: 5rem;
+
+        }
+        //min-width: 100%;
+        
+    }
 }

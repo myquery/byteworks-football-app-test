@@ -11,39 +11,50 @@
     background:$bkg;
     display: flex;
     justify-content: center;
+    @media screen and(max-width:450px){
+        height: auto;
+    }
   
 
     .top-header{
         width:70%;
         padding: 0px;
+        @media screen and(max-width:450px){
+            width: 100%;
+        }
         
                     
-                    
+          div{
+              div{
+                ul{
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: normal;
+                    padding: 5px;
+                   
+                 
+                            
+                    li{
+                        display: inline;
+                        margin-right: 10px;
+                        color: $txt-color ;
+                        &:nth-last-child(-n+2){
+                            border-left: 1px solid  $txt-color;
+                            padding-left: 10px;
+                        }
+                        &:hover{
+                            color:$white;
+                        }
+                        .currency{
+                            color:$currecy;
+                        }
+                       
+                    }
+                } 
+              }
+          }          
 
-        ul{
-            font-size: 10px;
-            font-style: normal;
-            font-weight: normal;
-            padding: 5px;
-         
-                    
-            li{
-                display: inline;
-                margin-right: 10px;
-                color: $txt-color ;
-                &:nth-last-child(-n+2){
-                    border-left: 1px solid  $txt-color;
-                    padding-left: 10px;
-                }
-                &:hover{
-                    color:$white;
-                }
-                .currency{
-                    color:$currecy;
-                }
-               
-            }
-        }
+
     
 
     }
@@ -64,6 +75,10 @@
     .logo-container{
     //position: absolute;
     width: 70%;
+    @media screen and(max-width:450px){
+        width: 100%;
+        padding: 10px;
+    }
   
     ul{
         font-weight: 600;
@@ -71,8 +86,17 @@
         line-height: 18px;
       
         text-align: right;
+        @media screen and(max-width:450px){
+            width: 100%;
+            padding-left: 10px !important;
+        }
        
         li{
+            @media screen and(max-width:450px){
+               font-size: 0.6rem;
+               padding: 2%;
+              // float: right;
+            }
             color: $logo-text;
             display: inline-block;
             list-style-type: none;
@@ -89,6 +113,11 @@
             position: relative;
             top: 10px;
             left:10px;
+            @media screen and(max-width:450px){
+                width:80%;
+                align-self: flex-start;
+               float: left;
+             }
         }
         
     }
@@ -108,7 +137,9 @@
     color: $bkg;
     display: flex;
     justify-content: center;
-    
+    @media screen and(max-width:450px){
+        height:70px;
+    }
     
     .header-list{
         width: 70%;
@@ -117,11 +148,36 @@
        // text-align: center; 
         height: 38px;
         padding-left: 10px !important;
+       // .drop-list{
+       //width: 10%;
+       @media screen and(max-width:450px){
+        width: 100%;
+      
+    
        
+    }
+ 
+  
       
         li{
+            @media screen and(max-width:450px){
+                font-size: 0.6rem;
+                height: auto;
+                padding: 0.5rem 0.5rem;
+                border:none;
+                &:nth-last-child(1){
+                    border:none;
+                
+                  
+    
+                   
+                }
+               
+            }
+         
+           
             list-style: none;
-            display: inline;
+            display: inline-block;
             padding: 0.8% 2%;
             border-left:1px solid $border-line;
             font-weight: 600;
@@ -133,7 +189,44 @@
              &:nth-last-child(1){
                 border-right:1px solid $border-line;
                 width: 24%;
+                @media screen and(max-width:450px){
+                    border: none;
+                  // width: 24%;
+                }
+
+               
             }
+
+           ul{
+         
+               li{
+              
+                   width: auto;
+                   padding: 10px;
+                   margin: 10px;
+                   border: none;
+                   &:nth-child(n){
+                    border-right:none;
+                    width: 24%;
+    
+                   
+                }
+                   span{
+                display: block;
+                margin: 0.7rem 0.7rem;
+              
+
+               
+            }
+                 h4{
+                    
+                    padding: 1rem 0.1rem;
+                }
+               }
+
+              
+           } 
+
          
             .search {
                 padding: 0px;
@@ -145,6 +238,10 @@
                 font-size: 14px;
                 width:100%;
                 max-width: 100%;
+                @media screen and (max-width: 450px){
+                    border:none;
+                    float: right;
+                }
               }
               
               .fa-search {
@@ -167,6 +264,9 @@
             }
 
         }
+
+   // }
+        //end drop-list
     }
   
 
@@ -205,6 +305,7 @@
               box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
               padding: 20px;
               margin-left: 21%;
+              z-index: 999;
            
           }
           
