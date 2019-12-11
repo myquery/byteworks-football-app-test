@@ -32,10 +32,19 @@
                 background: none !important;
                 font-size: 0.7rem;
                 color: $white !important;
-
-                &:hover{
-                    color: $currecy !important;
-                    text-decoration: none !important;
+         
+                    &:hover{
+                        color: $currecy !important;
+                        text-decoration: none !important;
+                        
+                    }
+                    a{
+                        color:$white !important;
+                        &:hover{
+                            color:$currecy !important;
+                            text-decoration: none;
+                        }
+                    
                 }
             }
 
@@ -80,15 +89,16 @@
             }
             
             .btn-group{
-                    width:50rem;
+                    width:53rem;
                     height: 100px;
                     margin-top: 50px;
+                    display: flex;
+                    justify-items: end;
                     
                     .footer-btn{
-                        float: right;
                         width: 94px;
                         height: 42px;
-                        margin: 10px;
+                        margin: 10px 0px 10px 10px;
                         font-weight: bold;
                         font-size: 14px;       
                         background:$currecy;

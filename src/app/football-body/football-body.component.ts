@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FootballStoreService} from '../football-store.service'
+import {FootballStoreService} from '../football-store.service';
+import {ICompetition} from '../state-manager/app-model/competitions.model'
+import {Observable} from 'rxjs'
 
 @Component({
   selector: 'app-football-body',
@@ -7,14 +9,20 @@ import {FootballStoreService} from '../football-store.service'
   styleUrls: ['./football-body.component.scss']
 })
 export class FootballBodyComponent implements OnInit {
+  competition: ICompetition[];
+  
 
   constructor(private service : FootballStoreService) { 
     
   }
 
   ngOnInit() {
-  this.service.listAllCompetition().subscribe(s=> console.log(s));
-  //this.service.getCompetition(1/1/2011).subscribe(s=>console.log(s))
+  this.service.listAllCompetition().subscribe((s:ICompetition[]) => {
+    console.log(s)
+    this.competition = s
+  }, 
+    );
+
   }
 
 }

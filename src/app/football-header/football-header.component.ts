@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import {ICompetition} from '../state-manager/app-model/competitions.model'
 
 @Component({
   selector: 'app-football-header',
@@ -10,6 +10,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class FootballHeaderComponent implements OnInit {
   
+  competition: ICompetition[];
 
   constructor() { }
 
