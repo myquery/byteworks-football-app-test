@@ -1,0 +1,11 @@
+{
+    "/v2/*": {
+      "target": "https://api.football-data.org",
+      "secure": false,
+      "pathRewrite": {
+        "^/v2": "https://api.football-data.org/v2"
+      },
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

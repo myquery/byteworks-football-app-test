@@ -167,10 +167,7 @@
                 border:none;
                 &:nth-last-child(1){
                     border:none;
-                
-                  
-    
-                   
+               
                 }
                
             }
@@ -198,12 +195,13 @@
             }
 
            ul{
+            width: 70%;
          
                li{
               
                    width: auto;
-                   padding: 10px;
-                   margin: 10px;
+                   padding: 5px;
+                   margin: 5px;
                    border: none;
                    &:nth-child(n){
                     border-right:none;
@@ -213,14 +211,20 @@
                 }
                    span{
                 display: block;
-                margin: 0.7rem 0.7rem;
-              
-
-               
+                margin: 0.5rem 0.4rem;
+                font-weight: bold;
+                a{
+                    &:hover{
+                        color:$currecy
+                    }
+                }
+             
             }
-                 h4{
+                 h6{
                     
                     padding: 1rem 0.1rem;
+                    border-bottom: 1px solid $border-line;
+                    font-weight: bolder;
                 }
                }
 

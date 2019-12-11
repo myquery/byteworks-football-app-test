@@ -1,16 +1,22 @@
+@import "../../styles.scss";
+
 .section-body{
-    height: 400px;
-    margin: 0 auto;
+    height: auto;
+    width: 100%;
     .top-badge{
-        position: absolute;
+        //position: absolute;
         width: 100%;
         height: 132px;
         left: 0px;
-        top: 145px;
+        //: 145px;
 
         background: linear-gradient(359.71deg, #FFFFFF -164.45%, rgba(255, 255, 255, 0) 17.36%), rgba(33, 35, 44, 0.9);
         mix-blend-mode: normal;
         background-size:cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
 
         @media screen and(max-width:450px){
             top: 200px;
@@ -18,6 +24,81 @@
 
         }
         //min-width: 100%;
+
+        .top-badge-container{
+            width: 70%;
+            color: $white;
+            .crumb{
+                background: none !important;
+                font-size: 0.7rem;
+                color: $white !important;
+
+                &:hover{
+                    color: $currecy !important;
+                    text-decoration: none !important;
+                }
+            }
+
+        }
         
+    }
+    .football-fixtures{
+        display: flex;
+        justify-content: center;
+        .fixtures{
+            width: 70%;
+            margin: 1rem;
+            .fixture-menu{
+
+              
+                ul{
+                    height: 50px;
+                    li{
+                        list-style: none;
+                        height: 25px !important;
+                        padding: 0 0.8rem !important;
+                        width: 50%;
+                        font-weight: bolder;
+                        border-right:1px solid $border-line;
+                        &:nth-last-child(1){
+                            border:none;
+                        }
+                        &:hover{
+                            background: #688090;
+                            color: $white;
+                            border-bottom:2px solid $currecy;
+                        }
+
+                    }
+                }
+
+            }
+            .team-table{
+                width: 100%;
+                max-width: 100%;
+                min-width: 50%;
+            }
+            
+            .btn-group{
+                    width:50rem;
+                    height: 100px;
+                    margin-top: 50px;
+                    
+                    .footer-btn{
+                        float: right;
+                        width: 94px;
+                        height: 42px;
+                        margin: 10px;
+                        font-weight: bold;
+                        font-size: 14px;       
+                        background:$currecy;
+                        border: 1px solid #E8C75E;
+                        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12);
+                        border-radius: 2px;
+                       
+                    }
+                
+            }
+        }
     }
 }

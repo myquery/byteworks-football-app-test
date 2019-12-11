@@ -8,11 +8,13 @@ import {FootballStoreService} from '../football-store.service'
 })
 export class FootballBodyComponent implements OnInit {
 
-  constructor(private service : FootballStoreService) { }
+  constructor(private service : FootballStoreService) { 
+    
+  }
 
   ngOnInit() {
   this.service.listAllCompetition().subscribe(s=> console.log(s));
-
+  //this.service.getCompetition(1/1/2011).subscribe(s=>console.log(s))
   }
 
 }

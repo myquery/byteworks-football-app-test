@@ -4,6 +4,7 @@ export interface ICompetitionState{
 }
 
 export const COMPETITION_STATE : ICompetitionState = {
+    
     competitions:[]
 }
 

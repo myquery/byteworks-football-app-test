@@ -1,28 +1,114 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {ICompetition} from './state-manager/app-model/competitions.model';
+import {IArea} from './state-manager/app-model/competitions.model';
+import {IMatch} from './state-manager/app-model/match.model';
+import {IStanding} from './state-manager/app-model/standing.model';
+import {IPlayers} from './state-manager/app-model/players.model';
+import {ITeam}from './state-manager/app-model/teams.model';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
  
+const headers = new HttpHeaders()
+
+
+const BASE_URL = '/v2/';
 @Injectable({
   providedIn: 'root'
 })
 export class FootballStoreService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('X-Auth-Token', 'fdff26df84a34e51a99566227ee6801d');
+   }
 
-  BASE_URL = 'https://api.football-data.org/v2/';
+  
  
+ 
+//get all competitions
+  listAllCompetition() : Observable<ICompetition[]>{
 
-  listAllCompetition(){
-    const headers = new HttpHeaders()
-    // const headers = new HttpHeaders({
-    //   'Access-Control-Allow-Origin' : 'true',
-    //   'X-Authenticated-Client': 'fdff26df84a34e51a99566227ee6801d',
-    //   'Access-Control-Allow-Headers': 'Content-Type,Accept'
-      
-    // });
-    headers.set('Content-Type', 'application/json;charset=UTF-8');
-    headers.set('Access-Control-Allow-Origin', '*');
-    headers.set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-    // headers.set('X-Authenticated-Client', 'fdff26df84a34e51a99566227ee6801d');
-    return this.http.get(this.BASE_URL+'competitions/', { headers: headers})
+    return this.http.get<ICompetition[]>(BASE_URL+'competitions/', {headers: headers})
+     .map(res => res);
+   
   }
+
+
+  //List one particular competition for a particular year
+  getCompetition(year:Date):Observable<ICompetition[]>{
+
+    return this.http.get<ICompetition[]>(BASE_URL+'competitions/'+year, {headers: headers})
+    .map(res => res);
+
+  }
+
+  //List all teams for a particular competition.
+  getAllTeamForCompetition(id : ICompetition) :Observable<ITeam[]> {
+ 
+    return this.http.get<ITeam[]>(BASE_URL+'competitions/'+id+'/teams', {headers: headers})
+
+  }
+
+  //Show Standings for a particular competition.
+  getTeamStandingForCompetition(id:ICompetition):Observable<IStanding[]>{
+     return this.http.get<IStanding[]>(BASE_URL+'competitions/'+id+'/teams', {headers: headers})
+
+  }
+
+  //List all matches for a particular competition.
+  getAllMatchesForCompetition(id:ICompetition) : Observable<IMatch[]>{
+     return this.http.get<IMatch[]>(BASE_URL+'competitions/'+id+'/matches', {headers: headers})
+  }
+
+  //List goal scorers for a particular competition.
+  getGoalScorerForCompetition(id:ICompetition):Observable<IPlayers[]>{
+   return this.http.get<IPlayers[]>(BASE_URL+'competitions/'+id+'/scorers', {headers: headers})
+  }
+
+  //List matches across (a set of) competitions.
+  getSetForCompetition():Observable<ICompetition[]>{
+    
+    return this.http.get<ICompetition[]>(BASE_URL+'competitions/matches', {headers: headers})
+  }
+
+  //Show one particular match
+  getOneMatchForCompetition(id:ICompetition):Observable<IMatch[]>{
+    return this.http.get<IMatch[]>(BASE_URL+'competitions/matches/'+id, {headers: headers})
+  }
+
+  //Show all matches for a particular team.
+  getAllMatchForTeams(id:ITeam) : Observable<IMatch[]>{
+    return this.http.get<IMatch[]>(BASE_URL+'teams/'+id+'/matches/', {headers: headers})
+  }
+
+  //Show one particular team.
+  getOneTeam(id:ITeam):Observable<ITeam[]>{
+    return this.http.get<ITeam[]>(BASE_URL+'teams/'+id, {headers: headers})
+  }
+
+  //List all available areas.
+  getAreas():Observable<ICompetition[]>{
+    return this.http.get<ICompetition[]>(BASE_URL+'areas/', {headers: headers})
+  }
+
+  //List one particular area.
+  getOneArea(id:IArea):Observable<ICompetition[]>{
+    return this.http.get<ICompetition[]>(BASE_URL+'areas/'+id, {headers: headers})
+  }
+
+  //List one particular player.
+  getOnePlayer(id:IPlayers):Observable<IPlayers[]>{
+    return this.http.get<IPlayers[]>(BASE_URL+'players/'+id, {headers: headers})
+  }
+
+  //Show all matches for a particular player.
+  getAllPlayers(id:IPlayers):Observable<IMatch[]>{
+    return this.http.get<IMatch[]>(BASE_URL+'players/'+id+'matches', {headers: headers})
+  }
+
 }
