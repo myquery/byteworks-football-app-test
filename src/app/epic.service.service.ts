@@ -1,39 +1,68 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { ActionsObservable } from 'redux-observable';
-// //import { SessionActions } from './state-manager/app.actions';
-// import { ICompetition } from './state-manager/app-model/competitions.model'
-// import {AnyAction} from 'redux'
-// import {Observable } from 'rxjs';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/catch';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ActionsObservable, ofType, StateObservable, Epic } from 'redux-observable';
+//import { SessionActions } from './state-manager/app.actions';
+import { ICompetition } from './state-manager/app-model/competitions.model'
+import { IStanding } from './state-manager/app-model/standing.model';
+import { IAppState } from './state-manager/app.reducers';
+import { IStand } from './state-manager/app-model/standing.model'
+import {AnyAction} from 'redux'
+import {Observable, pipe, } from 'rxjs';
 
-// const BASE_URL = 'https://api.football-data.org/v2/';
+import { mergeMap, map, switchMap,catchError} from 'rxjs/operators';
+import {FootballStoreService} from './football-store.service'
+
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 
-// interface Action {
-//   type:string;
-//   payload?: string
-// }
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class EpicServiceService {
 
-//   constructor(private http: HttpClient) { }
-//   listAllCompetitions = (action$: ActionsObservable<AnyAction>) => {
-//     return action$.ofType(SessionActions.LIST_ALL_COMPETITIONS)
-//       .mergeMap( () => {
-//         return this.http.get(`${BASE_URL}/competitions`)
-//           .map(result => ({
-//             type: SessionActions.LIST_ALL_COMPETITIONS            
-//           }))
-//           .catch(error => Observable.of({
-//             type: SessionActions.ERROR_LIST_COMPETITION
-//           }));
-//         });
-//   }
-// }
+@Injectable()
+export class EpicServiceService {
+
+  constructor(private http: HttpClient, private service : FootballStoreService ) { }
+
+  public createEpics(){
+    return [
+      this.listAllCompetitions(),
+      ];
+  }
+
+  listAllCompetitions = () => {
+     // do(val => console.log(val))
+   // return (action$: ActionsObservable<AnyAction>) => {
+
+    
+      //action$.ofType(SessionActions.LIST_ALL_COMPETITIONS)
+              // .pipe(
+              // switchMap(() => {
+              // return this.service.listAllCompetition().pipe(
+              //   map(result => {
+              //       return this.action.listAllCompetitionSuccess(result)
+              //   }),
+              //   catchError(error => Observable.of({
+              //     type: SessionActions.ERROR_LIST
+              //   }))
+              // )}))
+     // }
+    
+  }
+
+  getTeamStanding = (action$ : ActionsObservable<AnyAction>) =>  {
+      // return action$.pipe(ofType(SessionActions.LIST_TEAM_STANDING),
+      // mergeMap((action) => {
+      //     return this.service.getTeamStanding(action.payload)
+      //         .map(result => {
+      //             return this.action.listTeamStandingSuccess(result)
+      //         })
+      //         .catch(error => Observable.of({
+      //             type: SessionActions.ERROR_LIST
+      //         }))
+      // }))
+  }
+}

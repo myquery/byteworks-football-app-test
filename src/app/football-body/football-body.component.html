@@ -1,10 +1,10 @@
-<article>
+<main>
     <section>
         <div class="section-body">
             <div class="top-badge">
-                <div class="top-badge-container">
-                    <div class="d-flex mb-3">
-                            <div class="p-2 "><h1>Section Head</h1></div>
+                <div class="top-badge-container ">
+                    <div class="d-flex mb-3 ">
+                            <div class="p-2 " ><h1>Section</h1></div>
                         
                             <div class="ml-auto p-2 ">
                                 <nav aria-label="breadcrumb" >
@@ -21,68 +21,82 @@
             <div class="football-fixtures">
               
                     <div class="fixtures">
-                        <div class="d-flex align-items-start flex-column">
-                            <div class="mb-auto p-2 fixture-menu">
-                                    <ul class="d-flex bd-highlight">
-                                      <!-- <li *ngFor="let compete of competition">
-                                        {{compete.competitions.name}}
-                                      </li> -->
-                                            <li class="p-2 flex-fill">TABLE</li>
-                                            <li class="p-2 flex-fill">FIXTURES</li>
-                                            <li class="p-2 flex-fill">TEAMS</li>
+                        <div class="d-flex flex-column">
+                            <div class=" fixture-menu">
+                                    <ul class="nav nav-tabs"  id="myTab" role="tablist">
+                                            <li class="nav-item ">
+                                              <a href="#" class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">TABLE</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">
+                                                  FIXTURES</a></li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">
+                                                  TEAMS</a></li>
                                     </ul>
                             </div>
-                            <div class="team-table">
-                                <table class="table table-borderless ">
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                        <th scope="col">fourth</th>
-                                        <th scope="col">fifth</th>
-                                        <th scope="col">sixth</th>
-                                      </tr>
-                                    </thead>
+                            <div class="team-table tab-content">
+                                <table class="table table-borderless tab-pane fade show active " id="one" role="tabpanel" aria-labelledby="one-tab">
                                     <tbody>
-                                      <tr>
-                                        <th scope="row mb-1">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                      </tr>
-                                      
+                                       
+                                      <!-- <tr *ngFor="let item of comp; let i = index"> 
+                                        <th scope="row mb-1">{{i+1}}</th>
+                                        <td><b>{{item.team.name}}</b></td>  
+                                        <td>{{item.playedGames}}</td>
+                                        <td>{{item.team.crestURI}}</td>
+                                        <td>{{item.goalsAgainst}}</td>
+                                        <td>{{item.points}}</td>
+                                      </tr> -->
+                                                                    
                                       
                                     </tbody>
-                                  </table></div>
-                            <div  class="">
+                                  </table>
+                                  <table class="table table-borderless tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
+                                
+                                        <thead>
+                                          <th>#</th>
+                                          <th>Time</th>
+                                          <th>Home Team</th>
+                                          <th>No. of Matches</th>
+                                          <th>Total Goals</th>
+                                          <th>Away Team</th>
+                                        </thead>
+                                          <tbody>
+                                        <!-- <tr *ngFor="let item of comp; let i = index"> 
+                                          <th scope="row mb-1">{{i+1}}</th>
+                                          <td><b>{{item.team.name}}</b></td>  
+                                          <td>{{item.playedGames}}</td>
+                                          <td>{{item.team.crestURI}}</td>
+                                          <td>{{item.goalsAgainst}}</td>
+                                          <td>{{item.points}}</td>
+                                        </tr> -->
+                                                                      
+                                        
+                                      </tbody>
+                                    </table>
+                                    <table class="table table-borderless tab-pane fade" id="three" role="tabpanel" aria-labelledby="three-tab">
+                                        <tbody>
+                                         
+                                          <!-- <tr *ngFor="let item of comp; let i = index"> 
+                                            <th scope="row mb-1">{{i+1}}</th>
+                                            <td><b>{{item.team.name}}</b></td>  
+                                            <td>{{item.playedGames}}</td>
+                                            <td>{{item.team.crestURI}}</td>
+                                            <td>{{item.goalsAgainst}}</td>
+                                            <td>{{item.points}}</td>
+                                          </tr> -->
+                                                                        
+                                          
+                                        </tbody>
+                                      </table>
+                                      <ul><li *ngFor="let item of competition">{{item.name}}</li></ul>
+                                 
+                                </div> 
                                 <div class="btn-group ">
-                                        <button class="footer-btn d-block mr-0 ml-auto" style="float: right;"><i class="fas fa-angle-left"></i> Prev    </button>
-                                        <button class="footer-btn ">Next   <i class="fas fa-angle-right"></i></button>
-                                </div>
+                                    <button class="footer-btn d-block mr-0 ml-auto" style="float: right;"><i class="fas fa-angle-left"></i> Prev    </button>
+                                    <button class="footer-btn ">Next   <i class="fas fa-angle-right"></i></button>
                             </div>
+                           
                           </div>
                     </div>
                     
@@ -90,5 +104,5 @@
             </div>
         </div>
     </section>
-</article>
+  </main>
 

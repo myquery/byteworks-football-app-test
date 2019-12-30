@@ -1,21 +1,16 @@
 @import "../../styles.scss";
+
 .footer-container{
     width: 100%;
-    // position: relative;
-    // bottom: 0px;
-    
+
     .footer-more{
-        // position: absolute;
-        // bottom: 0;
+
         background: $footer_bkg1;
          .footer-more-text{
             height: 82px;
             margin: 0 auto;
             color: $white;
-            // font-family: Poppins;
             font-style: normal;
-           
-            // line-height: 213%;
             text-align: center;
           
             .footer-winning-text{
@@ -47,10 +42,14 @@
                     }
         }
         .footer-menu-container{
-            height: 241px;
+            //height: 241px;
+            height: 100%;
              .footer-menu-left{
                 background: $bkg;
                 width: 50%;
+                @media(max-width:$small){
+                    width: auto;
+                }
               
                 .menu-left-text{
                
@@ -96,14 +95,14 @@
                     }
                     
                 } 
-                // @media screen and(max-width: $smallest){
-                    
-                //     width: 100%;
-                // }           
+                     
 
             }
             .footer-menu-right{
-                background: $currecy; 
+                background: $currecy;
+                @media(max-width:$small){
+                    width: auto;
+                }
                              
                 .footer-logo{
                 //    position: relative;
@@ -111,7 +110,7 @@
               
                 
                 }
-               
+            
                
                }
         }
@@ -125,7 +124,7 @@
 
         ul{
             // text-align: center;
-           margin-top: 25%;
+           margin: 22% 10% 0 10%;
             li{
                 
 

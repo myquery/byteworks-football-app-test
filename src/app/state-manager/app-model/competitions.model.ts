@@ -6,6 +6,7 @@
     plan:string;
     currentSeason:ICurrentSeason;
     numberOfAvailableSeasons:number;
+    seasons:ISeason[];
     lastUpdated:Date;
 
   }
@@ -21,3 +22,11 @@
             currentMatchday:number;
             winner:any;
           }
+
+          export interface ISeason{
+            id:any;
+            startDate:Date;
+            endDate:Date;
+            currentMatchday:number;
+            
+        }

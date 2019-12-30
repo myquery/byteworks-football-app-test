@@ -1,78 +1,132 @@
-// import { Injectable } from '@angular/core';
-// import { NgRedux } from '@angular-redux/store';
-// import { IAppState } from './app.state';
+import { Injectable } from '@angular/core';
+import { NgRedux } from '@angular-redux/store';
+import { IAppState } from './app.reducers';
+import { initialState } from './app.reducers';
+import {ICompetition} from './app-model/competitions.model';
+import {IMatch} from './app-model/match.model';
+import {IStanding} from './app-model/standing.model';
+import {IStand} from './app-model/standing.model';
+import {IPlayers} from './app-model/players.model';
+import {ITeam}from './app-model/teams.model';
+import { AnyAction } from 'redux';
+import { FootballStoreService } from '../football-store.service';
+
+export enum ActionTypes {
+  LIST_ALL_COMPETITIONS_SUCCESS = 'LIST_ALL_COMPETITIONS_SUCCESS',
+  LIST_MATCHES_FOR_COMPETITION = 'LIST_MATCHES_FOR_COMPETITION',
+}
+ export const listAllCompetitionSuccess = (payload : ICompetition[]) : AnyAction => {
+    return { type: ActionTypes.LIST_ALL_COMPETITIONS_SUCCESS, payload};
+  };
+
+  export const listMatchesForCompetition = (payload : IStanding[]) : AnyAction => {
+    return { type: ActionTypes.LIST_MATCHES_FOR_COMPETITION, payload};
+  };
 
 // @Injectable()
 // export class SessionActions {
-//   static LIST_ALL_COMPETITIONS = 'LIST_ALL_COMPETITIONS';
-//   static LIST_ONE_COMPETITION = 'LIST_ONE_COMPETITION';
-//   static ERROR_LIST_COMPETITION = 'ERROR_LIST_COMPETITION';
-//   static LIST_ALL_TEAMS= 'LIST_ALL_TEAMS';
-//   static LIST_TEAM_STANDING = 'LIST_TEAM_STANDING';
-//   static LIST_ALL_MATCHES = 'LIST_ALL_MATCHES';
-//   static LIST_TOP_SCORER_FOR_COMPETITION = 'LIST_TOP_SCORER_FOR_COMPETITION';
-//   static LIST_MATCHES_FOR_COMPETITION = 'LIST_MATCHES_FOR_COMPETITION';
-//   static LIST_MATCHES_FOR_TEAM = 'LIST_MATCHES_FOR_TEAM';
-//   static LIST_TEAM = 'LIST_TEAM';
-//   static LIST_ALL_AREAS = 'LIST_ALL_AREAS';
-//   static LIST_ONE_AREA = 'LIST_ONE_AREA';
-//   static LIST_ONE_PLAYER = 'LIST_ONE_PLAYER';
-//   static LIST_ALL_MATCHES_ONE_PLAYER = 'LIST_ALL_MATCHES_ONE_PLAYER';
+
+ 
+//   constructor(private ngRedux: NgRedux<IAppState>, private service : FootballStoreService){}
+//   // export enum ActionTypes {
+//   //   ListCompetition = '[ICompetition] List all competition',
+//   //   ListCompetitionSuccess= '[ICompetition] List All Competition Success',
+//   //   LIstOneCompetition = '[ICompetition] List One Competition',
+//     static LIST_ALL_COMPETITIONS = 'LIST_ALL_COMPETITIONS';
+//     static LIST_ALL_COMPETITIONS_SUCCESS = 'LIST_ALL_COMPETITIONS_SUCCESS';
+//     static ERROR_LIST = 'ERROR_LIST';
+//     static LIST_ALL_TEAMS= 'LIST_ALL_TEAMS';
+//     static LIST_TEAM_STANDING = 'LIST_TEAM_STANDING';
+//     static LIST_ONE_COMPETITION = 'LIST_ONE_COMPETITION';
+//     static LIST_TEAM_STANDING_SUCCESS = 'LIST_TEAM_STANDING_SUCCESS';
+//     static LIST_ALL_MATCHES = 'LIST_ALL_MATCHES';
+//     static LIST_TOP_SCORER_FOR_COMPETITION = 'LIST_TOP_SCORER_FOR_COMPETITION';
+//     static LIST_MATCHES_FOR_COMPETITION = 'LIST_MATCHES_FOR_COMPETITION';
+//     static LIST_MATCHES_FOR_TEAM = 'LIST_MATCHES_FOR_TEAM';
+//     static LIST_TEAM = 'LIST_TEAM';
+//     static LIST_ALL_AREAS = 'LIST_ALL_AREAS';
+//     static LIST_ONE_AREA = 'LIST_ONE_AREA';
+//     static LIST_ONE_PLAYER = 'LIST_ONE_PLAYER';
+//     static LIST_ALL_MATCHES_ONE_PLAYER = 'LIST_ALL_MATCHES_ONE_PLAYER';
+
+//   //}
+
+
   
+  
+  
+// //   export const listAllCompetitions = () => {
+// //     return { type: ActionTypes.ListCompetition};
+// //   };
 
-//   constructor(private ngRedux: NgRedux<IAppState>) {}
+    
+// // export const listAllCompetitionSuccess = payload => {
+// //     return { type: ActionTypes.ListCompetitionSuccess, payload};
+// //   };
 
+// listAllCompetitions() : AnyAction {
+//   return this.ngRedux.dispatch(
+//     { type: SessionActions.LIST_ALL_COMPETITIONS});
+// };
 
-//   listAllCompetitions() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_COMPETITIONS });
+// // export listAllCompetitionSuccess(payload : ICompetition[]) : AnyAction {
+// //   return this.ngRedux.dispatch(
+// //     { type: SessionActions.LIST_ALL_COMPETITIONS, payload});
+// // };
+//   listOneCompetition(payload : ICompetition) : AnyAction {
+//     return this.ngRedux.dispatch(
+//       { type: SessionActions.LIST_ONE_COMPETITION, 
+//         payload});
 //   };
 
-//   listOneCompetition(year) {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ONE_COMPETITION});
+//   listAllTeams(payload: ITeam[]): AnyAction{
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_TEAMS, payload });
 //   };
 
-//   listAllTeams() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_TEAMS });
+//   listTeamStanding(payload) : AnyAction{
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_TEAM_STANDING, payload:initialState.standing});
 //   };
 
-//   listTeamStanding() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_TEAM_STANDING });
+//   listTeamStandingSuccess(payload) : AnyAction{
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_TEAM_STANDING, payload});
 //   };
 
-//   listAllMatches() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_MATCHES });
+//   listAllMatches(payload: IMatch[]) : AnyAction {
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_MATCHES, payload});
 //   };
 
-//   listTopScorerForCompetition() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_TOP_SCORER_FOR_COMPETITION });
+//   listTopScorerForCompetition(payload: IMatch[]) : AnyAction {
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_TOP_SCORER_FOR_COMPETITION, payload });
 //   };
 
-//   listMatchesForCompetition() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_MATCHES_FOR_COMPETITION });
+//   listMatchesForCompetition(payload:IMatch[]): AnyAction {
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_MATCHES_FOR_COMPETITION, payload });
 //   };
 
-//   listMatchesForTeam() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_MATCHES_FOR_TEAM });
+//   listMatchesForTeam(payload:IMatch[]) : AnyAction {
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_MATCHES_FOR_TEAM, payload });
 //   };
 
-//   listTeam() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_TEAM });
+//   listTeam(payload:ITeam[]) : AnyAction {
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_TEAM, payload });
 //   };
 
-//   listAllAreas() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_AREAS });
+//   listAllAreas(payload:ICompetition[]) : AnyAction {
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_AREAS, payload });
 //   };
 
-//   listOneArea() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ONE_AREA });
+//   listOneArea(payload: ICompetition) : AnyAction{
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_ONE_AREA, payload });
 //   };
 
-//   listOnePlayer() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ONE_PLAYER });
+//   listOnePlayer(payload:IPlayers) : AnyAction{
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_ONE_PLAYER, payload });
 //   };
 
-//   listAllMatchesOnePlayer() {
-//     this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_MATCHES_ONE_PLAYER });
+//   listAllMatchesOnePlayer(payload:IPlayers) : AnyAction {
+//     return this.ngRedux.dispatch({ type: SessionActions.LIST_ALL_MATCHES_ONE_PLAYER, payload });
 //   };
+
+// //}
 
 // }

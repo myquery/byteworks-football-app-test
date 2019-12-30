@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {ICompetition} from '../state-manager/app-model/competitions.model'
+import {FootballStoreService} from '../football-store.service';
 
 @Component({
   selector: 'app-football-header',
@@ -10,11 +11,35 @@ import {ICompetition} from '../state-manager/app-model/competitions.model'
 })
 export class FootballHeaderComponent implements OnInit {
   
-  competition: ICompetition[];
+  public comp : any;
+  public competition: ICompetition[];
+  public menu : any;
+  public menuItem : ICompetition[]
 
-  constructor() { }
+  constructor(private service : FootballStoreService ) { }
 
   ngOnInit() {
+    //this.getCompetitions();
+    //this.getHeader()
+
+
   }
+
+  // getCompetitions(){
+  //   this.service.listAllCompetition().subscribe(
+  //     (res) => {
+  //       this.comp = res;
+  //       this.competition = this.comp.competitions;
+  //     }
+  //   )
+  // }
+
+  // getHeader(){
+  //   this.service.listHeaderMenu().subscribe(item => {
+  //     this.menu = item;
+  //     this.menuItem = this.menu.competitions
+
+  //   })
+  // }
 
 }

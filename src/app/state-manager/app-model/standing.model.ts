@@ -1,7 +1,8 @@
 export interface IStanding{
+    competition: ICompetition[];
     season:ISeason;
     filter:IFilter;
-    standing:IStand[];
+    standings:IStand[];
 }
 
 export interface ISeason{
@@ -40,3 +41,19 @@ export interface ITeamStand{
     name:string;
     crestURI:string;
 }
+
+export interface ICompetition{
+    id:any;
+    area: IArea;
+    code:string;
+    name:string;
+    plan:string;
+    lastUpdated:Date;
+
+  }
+export interface IArea{
+id:any;
+name:string
+ }
+        
+  

@@ -1,8 +1,4 @@
-import {AnyAction} from 'redux'
 import {IPlayersState} from '../app-store/players.store'
-import {TEAM_INITIAL_STATE}  from '../app-store/teams.store';
-
-
 import { BehaviorSubject } from 'rxjs';
 import {Observable } from 'rxjs';
 import 'rxjs/add/observable/of';
@@ -25,8 +21,12 @@ export class PlayersStore {
       return this._state$.getValue();
     }
   
-    setPlayers (nextState: IPlayersState): void {
+    set players(nextState: IPlayersState) {
       this._state$.next(nextState);
+    }
+
+    getPlayers(){
+      this.state$.subscribe(item => item)
     }
   
   }
