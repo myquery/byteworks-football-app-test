@@ -3,7 +3,6 @@ import {IMatch} from './app-model/match.model';
 import {IStanding} from './app-model/standing.model';
 import {IPlayers} from './app-model/players.model';
 import {ITeam}from './app-model/teams.model';
-//import {AnyAction, combineReducers} from 'redux';
 import { ActionTypes} from './app.actions';
 
 
@@ -26,17 +25,18 @@ export interface IAppState {
 
   }
 
-  export function FootballReducer(state: IAppState = initialState, action){
+  export function FootballReducer(state: IAppState = initialState, action) : IAppState{
       switch(action.type){
           case ActionTypes.LIST_ALL_COMPETITIONS_SUCCESS:
-              return{...state, competitions: [...state.competitions,  action.payload]
+              return{...state, competitions: [...state.competitions, action.payload]
               }
-        case ActionTypes.LIST_MATCHES_FOR_COMPETITION:
+        case ActionTypes.LIST_TEAM_STANDING:
             return {
                 ...state, standing: [...state.standing, action.payload]
             }
-      
+            default:
+            return state;
       }
 
-      return state;
+      
   }

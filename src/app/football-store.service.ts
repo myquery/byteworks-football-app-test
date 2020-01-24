@@ -18,12 +18,7 @@ import 'rxjs/add/operator/catch';
 import { mergeMap } from 'rxjs-compat/operator/mergeMap';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState } from './state-manager/app.reducers';
-import { listAllCompetitionSuccess, listMatchesForCompetition } from './state-manager/app.actions';
-
-
- 
-//const headers = new HttpHeaders()
-
+import { listAllCompetitionSuccess, listMatchesForCompetition, listTeamStanding } from './state-manager/app.actions';
 
 const BASE_URL = '/v2/';
 @Injectable({
@@ -45,18 +40,12 @@ export class FootballStoreService {
 
 
   listHeaderMenu(){
-    return this.http.get<ICompetition[]>(BASE_URL+'competitions/?plan=TIER_ONE', {headers: this.headers})
-  }
-//get all competitions
-  listAllCompetition(){
-     return this.http.get<ICompetition[]>(BASE_URL+'competitions/', {headers: this.headers})
-     .subscribe(item => {
+    return this.http.get<ICompetition>(BASE_URL+'competitions/?plan=TIER_ONE', {headers: this.headers})
+    .subscribe(item => {
       // console.log(item)
        return this.ngRedux.dispatch(listAllCompetitionSuccess(item))
      })
-    }
-
-
+  }
   //List one particular competition for a particular year
   getCompetition(year:Date):Observable<ICompetition[]>{
 
@@ -134,7 +123,7 @@ export class FootballStoreService {
   getTeamStanding(id:number){
     return this.http.get<IStanding[]>(`${BASE_URL}competitions/${id}/standings/`, {headers: this.headers})
     .subscribe(item => {
-      return this.ngRedux.dispatch(listMatchesForCompetition(item))
+      return this.ngRedux.dispatch(listTeamStanding(item))
     })
     
     

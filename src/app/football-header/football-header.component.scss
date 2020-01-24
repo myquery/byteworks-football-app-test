@@ -11,16 +11,53 @@
     background:$bkg;
     display: flex;
     justify-content: center;
-    @media screen and(max-width:450px){
+    @media screen and(max-width: $responsive){
+     
         height: auto;
+        width: 100%;
+        font-size: 0.3rem;
     }
   
 
     .top-header{
         width:70%;
         padding: 0px;
-        @media screen and(max-width:450px){
+        @media screen and(max-width:$responsive){
             width: 100%;
+            .top-menulist{
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-template-rows: auto auto;
+              div{
+                div{
+                  ul{
+                      font-size: 10px;
+                      font-style: normal;
+                      font-weight: normal;
+                      padding: 5px;
+                     
+                   
+                              
+                      li{
+                          display: inline;
+                          margin-right: 10px;
+                          color: $txt-color ;
+                          &:nth-last-child(-n+2){
+                              border-left: 1px solid  $txt-color;
+                              padding-left: 10px;
+                          }
+                          &:hover{
+                              color:$white;
+                          }
+                          .currency{
+                              color:$currecy;
+                          }
+                         
+                      }
+                  } 
+                }
+            }
+            }
         }
         
                     
@@ -75,36 +112,175 @@
     .logo-container{
     //position: absolute;
     width: 70%;
-    @media screen and(max-width:450px){
+   #menuToggle{
+   
+    input{
+      display: none;
+    }
+    #menuItem {
+      display: block !important;
+    
+      li{
+        display: inline-block !important;
+        list-style-type: none;
+        padding: 15px 7px;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        margin-top: 3%;
+        a{
+          color: $bkg;
+        }
+      }
+    }
+   }
+    @media screen and(max-width:$responsive){
+        
+
+     
         width: 100%;
         padding: 10px;
-    }
+        display: grid;
+        grid-template-columns:  2fr 1fr;
   
-    ul{
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 18px;
-      
-        text-align: right;
-        @media screen and(max-width:450px){
-            width: 100%;
-            padding-left: 10px !important;
-        }
-       
-        li{
-            @media screen and(max-width:450px){
-               font-size: 0.6rem;
-               padding: 2%;
-              // float: right;
+          nav{
+            margin-top:-50px;
+          #menuToggle {
+            display: block !important;
+            position: relative !important;
+            top: 65px !important;
+            right: 35px !important;
+            z-index: 1 !important;
+            -webkit-user-select: none !important;
+            user-select: none !important;
+            opacity: 0.97;
+          
+            a {
+              text-decoration: none;
+              color: #232323;
+              transition: color 0.3s ease;
+          
+              &:hover {
+                color: tomato;
+              }
             }
-            color: $logo-text;
-            display: inline-block;
-            list-style-type: none;
-            padding: 5% 1%;
-            
+          
+            input {
+              display: block;
+              width: 40px;
+              height: 32px;
+              position: absolute;
+              top: -7px;
+              left: -5px;
+              cursor: pointer;
+              opacity: 0;
+          
+              /* hide this */
+              z-index: 2;
+          
+              /* and place it over the hamburger */
+          
+              -webkit-touch-callout: none;
+            }
+          
+            span {
+              display: block;
+              width: 33px;
+              height: 4px;
+              margin-bottom: 5px;
+              position: relative;
+              background: $bkg;
+              border-radius: 3px;
+              z-index: 1;
+              transform-origin: 4px 0px;
+              transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), 
+              background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+          
+              &:first-child {
+                transform-origin: 0% 0%;
+              }
+          
+              &:nth-last-child(2) {
+                transform-origin: 0% 100%;
+              }
+            }
+          
+            input:checked ~ span {
+              opacity: 1;
+              transform: rotate(45deg) translate(-2px, -1px);
+              background: #232323;
+          
+              &:nth-last-child(3) {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+              }
+          
+              &:nth-last-child(2) {
+                transform: rotate(-45deg) translate(0, -1px);
+              }
+            }
+          }
         }
+          
+          /*
+           * Just a quick hamburger
+           */
+          
+          /* 
+           * Transform all the slices of hamburger
+           * into a crossmark.
+           */
+          
+          /*
+           * But let's hide the middle one.
+           */
+          
+          /*
+           * Ohyeah and the last one should go the other direction
+           */
+          
+          /*
+           * Make this absolute positioned
+           * at the top left of the screen
+           */
+          
+          #menuItem {
+            position: absolute;
+            width: 250px;
+            margin: -53px -50px 0  0 ;
+            padding: 50px;
+            padding-top: 35px;
+            background: #eee;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+          
+           
+            /* to stop flickering of text in safari */
+          
+            transform-origin: -10% 0%;
+            transform: translate(40%, 0);
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+           
 
+          
+            li {
+              
+              padding: 0 10px ;
+              font-size: 15px;
+            }
+          }
+          
+          /*
+           * And let's slide it in from the left
+           */
+          
+          #menuToggle input:checked ~ ul {
+            transform:translate(-60%, 0);
+           
+          }
     }
+    
 
     .logo{
             
@@ -113,8 +289,8 @@
             position: relative;
             top: 10px;
             left:10px;
-            @media screen and(max-width:450px){
-                width:80%;
+            @media screen and(max-width:$responsive){
+                width:70%;
                 align-self: flex-start;
                float: left;
              }
@@ -137,23 +313,61 @@
     color: $bkg;
     display: flex;
     justify-content: center;
-    @media screen and(max-width:450px){
+    @media screen and(max-width:$responsive){
         height:70px;
+    
+        .header-list{
+               width: 100%;
+               position: relative;
+               
+               
+                overflow: hidden;
+               
+               @media screen and(max-width:$responsive){
+                li{
+                 
+                  &:last-child{
+                  input{
+                   
+                      width:120px;
+                      left:65%;
+                      position: absolute;
+                    }
+                    i{
+                      margin-top:2%;
+                      left:90%;
+                      position: absolute;
+                    }
+                  }
+                 }
+               }
+               li{
+                &:last-child{
+                input{
+                 
+                 
+                    position: absolute;
+                  }
+                  i{
+                    margin-top:2%;
+                
+                    position: absolute;
+                  }
+                }
+               }
+          }
     }
     
     .header-list{
         width: 70%;
         max-width: 100%;
-        // overflow-x: hidden;
-        // overflow-y: hidden;
-        //margin: 0 auto;
-       // text-align: center; 
         height: 38px;
         padding-left: 10px !important;
-       // .drop-list{
-       //width: 10%;
-       @media screen and(max-width:450px){
+        overflow-x: auto;
+        overflow-y: hidden;
+        @media screen and(max-width:$responsive){
         width: 100%;
+        overflow-x: auto;;
       
     
        
@@ -162,13 +376,25 @@
   
       
         li{
-            @media screen and(max-width:450px){
+          &:nth-last-child(1){
+          
+            clear: both;
+            position: absolute;
+            top: 30%;
+            right:20%
+       
+        }
+            @media screen and(max-width:400px){
                 font-size: 0.6rem;
                 height: auto;
                 padding: 0.5rem 0.5rem;
                 border:none;
                 &:nth-last-child(1){
                     border:none;
+                    clear: both;
+                    position: absolute;
+                    top: 30%;
+                    right:20%
                
                 }
                
@@ -188,7 +414,7 @@
              &:nth-last-child(1){
                 border-right:1px solid $border-line;
                 width: 24%;
-                @media screen and(max-width:450px){
+                @media screen and(max-width:400px){
                     border: none;
                   // width: 24%;
                 }
@@ -244,7 +470,7 @@
                 font-size: 14px;
                 width:100%;
                 max-width: 100%;
-                @media screen and (max-width: 450px){
+                @media screen and (max-width: 400px){
                     border:none;
                     float: right;
                 }

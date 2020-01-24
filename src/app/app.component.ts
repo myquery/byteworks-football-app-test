@@ -17,59 +17,9 @@ import { IPlayers } from './state-manager/app-model/players.model';
 })
 export class AppComponent implements OnInit {
   title = 'byteworks-football';
-  public competition : ICompetition[];
-  public standing : IStanding[];
-  public teamStand : IStand[]
 
-  constructor(private ngRedux : NgRedux<IAppState>, private service : FootballStoreService){}
-   @select('competitions') competitions$: Observable<ICompetition[]>;
-   //@select('matches') matches$: Observable<IMatch[]>
-  // @select('teams') teams$ : Observable<ITeam[]>
-     @select('standing') standing$ : Observable<IStanding[]>
-  // @select('players') players$ : Observable<IPlayers[]>
+  constructor(){}
 
-  ngOnInit(){
 
-    this.getCompetitions()
-    this.competitions$.subscribe(item => {
-      this.competition = item
-    
-        console.log(this.competition)
-         
-    })
-
-    this.getTables(2014)
-    this.standing$.subscribe(item => {
-    this.standing= item
-   console.log(this.standing)
-    
-        
-         
-    })
-    this.getStanding()
-  }
-
-  // loadCompetition(){
-  //   this.action.listAllCompetitions()
-  // }
-
-  // loadStanding(id){
-  //   this.action.listTeamStanding(id)
-  // }
-
-  getCompetitions(){
-    this.service.listAllCompetition()
-    
-  }
-  getTables(id:number){
-  
-    this.service.getTeamStanding(id)
-  }
-
-  getStanding(){
-    this.standing.map(item => {
-      this.teamStand = item.standings
-      console.log(this.teamStand)
-    })
-  }
+  ngOnInit(){}
 }

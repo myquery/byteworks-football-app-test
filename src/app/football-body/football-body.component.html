@@ -1,108 +1,98 @@
 <main>
-    <section>
-        <div class="section-body">
-            <div class="top-badge">
-                <div class="top-badge-container ">
-                    <div class="d-flex mb-3 ">
-                            <div class="p-2 " ><h1>Section</h1></div>
-                        
-                            <div class="ml-auto p-2 ">
-                                <nav aria-label="breadcrumb" >
-                                    <ol class="breadcrumb crumb">
-                                      <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                      <li class="breadcrumb-item"><a href="#">Library</a></li>
-                                      <li class="breadcrumb-item active" aria-current="page"><a href="#">Data</a></li>
-                                    </ol>
-                                  </nav></div>
-                          </div><div></div>
-                        </div>
+  <section>
+    <div class="section-body">
+      <div class="top-badge">
+        <div class="top-badge-container d-flex mb-3">
 
-            </div>
-            <div class="football-fixtures">
-              
-                    <div class="fixtures">
-                        <div class="d-flex flex-column">
-                            <div class=" fixture-menu">
-                                    <ul class="nav nav-tabs"  id="myTab" role="tablist">
-                                            <li class="nav-item ">
-                                              <a href="#" class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">TABLE</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">
-                                                  FIXTURES</a></li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">
-                                                  TEAMS</a></li>
-                                    </ul>
-                            </div>
-                            <div class="team-table tab-content">
-                                <table class="table table-borderless tab-pane fade show active " id="one" role="tabpanel" aria-labelledby="one-tab">
-                                    <tbody>
-                                       
-                                      <!-- <tr *ngFor="let item of comp; let i = index"> 
-                                        <th scope="row mb-1">{{i+1}}</th>
-                                        <td><b>{{item.team.name}}</b></td>  
-                                        <td>{{item.playedGames}}</td>
-                                        <td>{{item.team.crestURI}}</td>
-                                        <td>{{item.goalsAgainst}}</td>
-                                        <td>{{item.points}}</td>
-                                      </tr> -->
-                                                                    
-                                      
-                                    </tbody>
-                                  </table>
-                                  <table class="table table-borderless tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
-                                
-                                        <thead>
-                                          <th>#</th>
-                                          <th>Time</th>
-                                          <th>Home Team</th>
-                                          <th>No. of Matches</th>
-                                          <th>Total Goals</th>
-                                          <th>Away Team</th>
-                                        </thead>
-                                          <tbody>
-                                        <!-- <tr *ngFor="let item of comp; let i = index"> 
-                                          <th scope="row mb-1">{{i+1}}</th>
-                                          <td><b>{{item.team.name}}</b></td>  
-                                          <td>{{item.playedGames}}</td>
-                                          <td>{{item.team.crestURI}}</td>
-                                          <td>{{item.goalsAgainst}}</td>
-                                          <td>{{item.points}}</td>
-                                        </tr> -->
-                                                                      
-                                        
-                                      </tbody>
-                                    </table>
-                                    <table class="table table-borderless tab-pane fade" id="three" role="tabpanel" aria-labelledby="three-tab">
-                                        <tbody>
-                                         
-                                          <!-- <tr *ngFor="let item of comp; let i = index"> 
-                                            <th scope="row mb-1">{{i+1}}</th>
-                                            <td><b>{{item.team.name}}</b></td>  
-                                            <td>{{item.playedGames}}</td>
-                                            <td>{{item.team.crestURI}}</td>
-                                            <td>{{item.goalsAgainst}}</td>
-                                            <td>{{item.points}}</td>
-                                          </tr> -->
-                                                                        
-                                          
-                                        </tbody>
-                                      </table>
-                                      <ul><li *ngFor="let item of competition">{{item.name}}</li></ul>
-                                 
-                                </div> 
-                                <div class="btn-group ">
-                                    <button class="footer-btn d-block mr-0 ml-auto" style="float: right;"><i class="fas fa-angle-left"></i> Prev    </button>
-                                    <button class="footer-btn ">Next   <i class="fas fa-angle-right"></i></button>
-                            </div>
-                           
-                          </div>
-                    </div>
-                    
-                
-            </div>
+          <div class="p-2 section-title ">
+            <h1>Championship</h1>
+          </div>
+
+          <div class="ml-auto p-2 ">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb crumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#">Data</a></li>
+              </ol>
+            </nav>
+          </div>
+
+
         </div>
-    </section>
-  </main>
 
+      </div>
+      <div class="football-fixtures">
+
+        <div class="fixtures">
+          <div class="d-flex flex-column">
+            <div class=" fixture-menu">
+              <nav>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item ">
+                    <a href="#" class="nav-link active" id="one-tab" data-toggle="tab" href="#table" role="tab"
+                      aria-controls="One" aria-selected="true">TABLE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" id="two-tab" data-toggle="tab" href="#feature" role="tab"
+                      aria-controls="Two" aria-selected="false">
+                      FIXTURES</a></li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" id="three-tab" data-toggle="tab" href="#teams" role="tab"
+                      aria-controls="Three" aria-selected="false">
+                      TEAMS</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="team-table tab-content" id="myTabContent">
+              <div class="d-flex bd-highlight" *ngFor="let item of comp; let i = index">
+                <div class="p-2 bd-highlight">{{i+1}}</div>
+                <div class="p-2 bd-highlight"><img src={{logoImg}} [alt]="" /></div>
+                <div class="p-2 w-50 bd-highlight"><b>{{item.team.name}}</b></div>
+                <div class="p-2  bd-highlight flex-fill">{{item.playedGames}}</div>
+                <div class="p-2 bd-highlight  flex-fill">{{item.goalsAgainst}}</div>
+                <div class="p-2 bd-highlight  flex-fill">{{item.points}}</div>
+              </div>
+              <table class="table table-borderless tab-pane fade" id="feature" role="tabpanel"
+                aria-labelledby="two-tab">
+
+                <thead>
+                  <th>#</th>
+                  <th>Time</th>
+                  <th>Home Team</th>
+                  <th>No. of Matches</th>
+                  <th>Total Goals</th>
+                  <th>Away Team</th>
+                </thead>
+                <tbody>
+
+
+
+                </tbody>
+              </table>
+              <table class="table table-borderless tab-pane fade" id="teams" role="tabpanel"
+                aria-labelledby="three-tab">
+                <tbody>
+
+
+
+                </tbody>
+              </table>
+
+
+            </div>
+            <div class="btn-group ">
+              <button class="footer-btn d-block mr-0 ml-auto" style="float: right;"><i class="fas fa-angle-left"></i>
+                Prev </button>
+              <button class="footer-btn ">Next <i class="fas fa-angle-right"></i></button>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+</main>

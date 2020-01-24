@@ -18,7 +18,7 @@
         align-items: center;
 
 
-        @media screen and(max-width:450px){
+        @media screen and(max-width:$responsive){
             top: 200px;
             height: 5rem;
 
@@ -26,8 +26,17 @@
         //min-width: 100%;
 
         .top-badge-container{
-            @media screen and(max-width:450px){
-                width: 80%;
+            @media screen and(max-width:$responsive){
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .section-title{
+                   h1{
+                      font-size: 1.3rem;  
+                   }
+                }
                 h2{
                 font-size: 1rem;
                 //margin-top: 1rem;
@@ -67,6 +76,13 @@
         
     }
     .football-fixtures{
+        @media screen and(max-width:$responsive){
+            width: 100%;
+            .fixtures{
+                width: 100%;  
+            }
+            
+        }
     
         display: flex;
         justify-content: center;
@@ -74,7 +90,7 @@
         .fixtures{
             width: 70%;
             //margin: 1rem;
-            @media screen and(max-width:$small){
+            @media screen and(max-width:$responsive){
                 width: 100%;
                 //margin: 0.5rem;
             }
@@ -127,6 +143,25 @@
             }
             .team-table{
                 width: 100%;
+                margin: 10px;
+                table{
+                    
+                    tr{
+                        
+                        td{
+                           
+                            margin-left: 30px;
+                            @media screen and(max-width: $responsive){
+                                 font-size: 0.7rem;
+                            }
+                           
+                           b{
+                              
+                               margin-left: 30px;
+                           }
+                        }
+                    }
+                }
               
                 @media screen and(max-width:$small){
                     width: 100%;

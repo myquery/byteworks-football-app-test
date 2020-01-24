@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {ICompetition} from '../state-manager/app-model/competitions.model'
 import {FootballStoreService} from '../football-store.service';
+import { Observable } from 'rxjs';
+import { select } from '@angular-redux/store';
 
 @Component({
   selector: 'app-football-header',
@@ -12,34 +14,36 @@ import {FootballStoreService} from '../football-store.service';
 export class FootballHeaderComponent implements OnInit {
   
   public comp : any;
-  public competition: ICompetition[];
   public menu : any;
-  public menuItem : ICompetition[]
-
-  constructor(private service : FootballStoreService ) { }
-
-  ngOnInit() {
-    //this.getCompetitions();
-    //this.getHeader()
+  public menuItem : ICompetition
 
 
+  @select() competitions$: Observable<ICompetition>;
+
+  constructor(private service : FootballStoreService ) { 
+    
   }
 
-  // getCompetitions(){
-  //   this.service.listAllCompetition().subscribe(
-  //     (res) => {
-  //       this.comp = res;
-  //       this.competition = this.comp.competitions;
-  //     }
-  //   )
-  // }
+  ngOnInit() {
+    this.service.listHeaderMenu()
+    
+    
+    this.competitions$.subscribe({
+      next: item => {
+       this.menuItem = item
+       for (let i in  this.menuItem) {
+        this.comp =  this.menuItem[i].competitions;
+        //this.showLoading = true;
+      }
+       console.log(this.menuItem)
+        
+      },
+      error: err => console.log("Error Occurred"),
+      complete: ()=> console.log("Completed")
+    })
 
-  // getHeader(){
-  //   this.service.listHeaderMenu().subscribe(item => {
-  //     this.menu = item;
-  //     this.menuItem = this.menu.competitions
+   
+  }
 
-  //   })
-  // }
 
 }

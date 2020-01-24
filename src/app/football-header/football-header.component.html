@@ -1,11 +1,11 @@
 <header>
-  
+
     <div class="football-header">
-       <div class="top-header">
-            <div class="d-flex d-sm-flex d-md-flex d-lg-flex text-white">
+        <div class="top-header">
+            <div class="d-flex d-sm-flex d-md-flex d-lg-flex text-white top-menulist">
                 <div class="flex-fill ml-auto">
                     <ul>
-                        
+
                         <li><span class="fab fa-facebook-f"></span></li>
                         <li><span class="fab fa-twitter"></span></li>
                         <li><span class="fab fa-instagram"></span></li>
@@ -13,93 +13,102 @@
                         <li>Contact Us</li>
                         <li>Donations</li>
                     </ul>
-              
+
                 </div>
                 <div class="flex-fill mr-auto" style="text-align: right;">
                     <ul>
-                    <li>Currency: <span class="currency">USD</span></li>
-                    <li><span class="currency"><i class="fas fa-lock"></i>  Sign Up</span> or Login</li>
-                </ul></div>
+                        <li>Currency: <span class="currency">USD</span></li>
+                        <li><span class="currency"><i class="fas fa-lock"></i> Sign Up</span> or Login</li>
+                    </ul>
+                </div>
             </div>
-      </div>
+        </div>
     </div>
     <div class="football-nav">
-        <div class="d-flex d-sm-flex d-md-flex d-lg-flex flex-row logo-container">
-                <div class="flex-fill logo"><img src="../../assets/images/football_logo.svg" class="img-fluid"></div>
-                <div class="flex-fill">
-                   
-                    <ul>
-                        <li>HOME</li>
-                        <li>NEWS</li>
-                        <li>RESULTS</li>
-                        <li>TABLES</li>
-                        <li>TIPS</li>
-                        <li>FEATURES</li>
-                        <li>ABOUT</li>
+        <div class="d-flex flex-row logo-container">
+
+            <div class="flex-fill logo"><img src="../../assets/images/football_logo.svg" class="img-fluid"></div>
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menuItem">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">NEWS</a></li>
+                        <li><a href="#">RESULTS</a></li>
+                        <li><a href="#">TABLES</a></li>
+                        <li><a href="#">TIPS</a></li>
+                        <li><a href="#">FEATURES</a></li>
+                        <li><a href="#">ABOUT</a></li>
                     </ul>
-                
+
                 </div>
+            </nav>
 
         </div>
     </div>
-    
+
     <nav class="dropdown-header" role="navigation">
-        <ul class="header-list d-flex d-sm-flex flex-wrap flex-sm-wrap">
-            <!-- <li *ngFor="let item of menuItem">{{item.name}}</li> -->
-            <li >LIGA BBVA</li>
+
+        <ul class="header-list d-flex d-sm-flex flex-wrap flex-sm-wrap flex-md-wrap">
+            <li *ngFor="let item of comp">{{item.name | uppercase}}</li>
+            <!-- <li>LIGA BBVA</li>
             <li class="drop-list">
-                    <a href="#">UEFA</a>
-                    <ul class="dropdown">
-                        <li>
-                            
-                            <h6>Column 1</h6> 
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Latest New</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
-                        </li>
-                        <li>
-                            
-                            <h6>Column 2</h6>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Latest New</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
-                       </li>
-                            
-                       <li>
-                            
+                <a href="#">UEFA</a>
+                <ul class="dropdown">
+                    <li>
+
+                        <h6>Column 1</h6>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Latest New</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
+                    </li>
+                    <li>
+
+                        <h6>Column 2</h6>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Latest New</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
+                    </li>
+
+                    <li>
+
                         <h6>Column 3</h6>
                         <span><a href="#"><i class="fab fa-facebook-f"></i> Latest New</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
-                            <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
-                   </li>
-                   <li>
-                    <h6>Column 4</h6> 
-                    <span><a href="#"><i class="fab fa-facebook-f"></i> Latest New</a></span>
-                    <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
-                    <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
-                    <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
-                    <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
-               </li>
-                    </ul>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
+                    </li>
+                    <li>
+                        <h6>Column 4</h6>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Latest New</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Players Room</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Media Gallery</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Feedback</a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i> Contact Us</a></span>
+                    </li>
+                </ul>
             </li>
             <li>EPL</li>
-            <li >SUPER CUP</li>
-            <li >WORLD CUP</li>
+            <li>SUPER CUP</li>
+            <li>WORLD CUP</li>
             <li>NPL</li>
-            <li >NATION LEAGUE</li>
-            <li >ARCHIVE</li>
+            <li>NATION LEAGUE</li>
+            <li>ARCHIVE</li> -->
             <li class="search">
-                
-                            <input type="text" placeholder="search" />
-                            <i class="fa fa-search"></i>
-                    
-                
+
+                <input type="text" placeholder="search" />
+                <i class="fa fa-search"></i>
+
+
             </li>
         </ul>
     </nav>

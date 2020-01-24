@@ -12,19 +12,35 @@
             color: $white;
             font-style: normal;
             text-align: center;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            @media screen and(max-width: $responsive) {
+                height: auto;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                .footer-winning-text{
+                padding: 5px 20px;
+                font-size: 12px;
+                }
+                .footer-btn{
+                    
+                    width: 46px;
+                    height: 22px;
+                    margin: 10px;
+                    font-weight: bold;
+                    font-size: 10px;       
+                 
+                   
+                }
+                
+            }
           
             .footer-winning-text{
                 padding: 20px;
                 display: inline-block;
                 text-align: center;
                 font-size: 18px;
-                
-                @media screen and(max-width: $small) {
-                    padding: 5px 20px;
-                    font-size: 12px;
-                    
-                }
-               
+       
 
             }
             .footer-btn{
@@ -44,12 +60,41 @@
         .footer-menu-container{
             //height: 241px;
             height: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            // grid-template-rows: auto auto;
+            // grid-template-areas: 
+            // "menu-left menu-right";
+           
+
+           
+
+            @media(max-width:$responsive){
+                display: grid;
+               grid-template-columns: 1fr;
+               grid-template-rows: auto auto auto;
+               grid-template-areas: 
+               "menu-left"
+               "menu-right"
+               ".";
+                width: auto;
+                .footer-menu-left{
+                    width: 100%;
+                    grid-area: menu-left;
+                }
+                .footer-menu-right{
+                    grid-area: menu-right;
+
+                }
+                .menu-left-bottom{
+                    grid-area: menu-btn;
+                }
+            }
              .footer-menu-left{
                 background: $bkg;
-                width: 50%;
-                @media(max-width:$small){
-                    width: auto;
-                }
+                width: 100%;
+                grid-area: 2fr;
+             
               
                 .menu-left-text{
                
@@ -79,7 +124,7 @@
                    }
                 }
                 .menu-left-bottom{
-                 
+                   
                     height: 20%;
                     background:$footer_bkg1;                   
                     // font-family: Poppins;
@@ -99,6 +144,7 @@
 
             }
             .footer-menu-right{
+                grid-area: 2fr;
                 background: $currecy;
                 @media(max-width:$small){
                     width: auto;

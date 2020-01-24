@@ -1,5 +1,5 @@
 export interface IStanding{
-    competition: ICompetition[];
+    competition: Competition[];
     season:ISeason;
     filter:IFilter;
     standings:IStand[];
@@ -42,7 +42,7 @@ export interface ITeamStand{
     crestURI:string;
 }
 
-export interface ICompetition{
+export interface Competition{
     id:any;
     area: IArea;
     code:string;
