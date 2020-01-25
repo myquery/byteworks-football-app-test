@@ -8,7 +8,6 @@ import {IStanding} from './app-model/standing.model';
 import {IStand} from './app-model/standing.model';
 import {IPlayers} from './app-model/players.model';
 import {ITeam}from './app-model/teams.model';
-import { AnyAction } from 'redux';
 import { FootballStoreService } from '../football-store.service';
 
 export enum ActionTypes {
@@ -16,15 +15,15 @@ export enum ActionTypes {
   LIST_MATCHES_FOR_COMPETITION = 'LIST_MATCHES_FOR_COMPETITION',
   LIST_TEAM_STANDING = 'LIST_TEAM_STANDING',
 }
- export const listAllCompetitionSuccess = (payload : ICompetition) : AnyAction => {
+ export const listAllCompetitionSuccess = (payload : ICompetition) => {
     return { type: ActionTypes.LIST_ALL_COMPETITIONS_SUCCESS, payload};
   };
 
-  export const listMatchesForCompetition = (payload : IStanding[]) : AnyAction => {
+  export const listMatchesForCompetition = (payload : IStanding[])  => {
     return { type: ActionTypes.LIST_MATCHES_FOR_COMPETITION, payload};
   };
 
-  export const listTeamStanding = (payload : IStanding[]) : AnyAction => {
+  export const listTeamStanding = (payload : IStanding[]) => {
     return { type: ActionTypes.LIST_TEAM_STANDING , payload};
   };
 
