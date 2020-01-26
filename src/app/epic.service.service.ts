@@ -6,7 +6,7 @@ import { ICompetition } from './state-manager/app-model/competitions.model'
 import { IStanding } from './state-manager/app-model/standing.model';
 import { IAppState } from './state-manager/app.reducers';
 import { IStand } from './state-manager/app-model/standing.model'
-import {AnyAction} from 'redux'
+
 import {Observable, pipe, } from 'rxjs';
 
 import { mergeMap, map, switchMap,catchError} from 'rxjs/operators';
@@ -53,7 +53,7 @@ export class EpicServiceService {
     
   }
 
-  getTeamStanding = (action$ : ActionsObservable<AnyAction>) =>  {
+  // getTeamStanding = (action$ : ActionsObservable<AnyAction>) =>  {
       // return action$.pipe(ofType(SessionActions.LIST_TEAM_STANDING),
       // mergeMap((action) => {
       //     return this.service.getTeamStanding(action.payload)
@@ -64,5 +64,5 @@ export class EpicServiceService {
       //             type: SessionActions.ERROR_LIST
       //         }))
       // }))
-  }
+ // }
 }

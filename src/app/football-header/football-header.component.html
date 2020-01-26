@@ -52,12 +52,12 @@
     </div>
 
     <nav class="dropdown-header" role="navigation">
+        <div class="menu-container">
+            <div class="menu-list">
 
-        <ul class="header-list d-flex d-sm-flex flex-wrap flex-sm-wrap flex-md-wrap">
-            <li *ngFor="let item of comp">{{item.name | uppercase}}</li>
-            <!-- <li>LIGA BBVA</li>
-            <li class="drop-list">
-                <a href="#">UEFA</a>
+        <ul class="header-list d-flex ">
+            <li class="drop-list" *ngFor="let item of comp">
+                <a href="#">{{item.name | uppercase}}</a>
                 <ul class="dropdown">
                     <li>
 
@@ -97,20 +97,14 @@
                     </li>
                 </ul>
             </li>
-            <li>EPL</li>
-            <li>SUPER CUP</li>
-            <li>WORLD CUP</li>
-            <li>NPL</li>
-            <li>NATION LEAGUE</li>
-            <li>ARCHIVE</li> -->
-            <li class="search">
 
-                <input type="text" placeholder="search" />
-                <i class="fa fa-search"></i>
-
-
-            </li>
         </ul>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="search" />
+                <i class="fa fa-search"></i>
+    </div>
+</div>
     </nav>
 
 </header>

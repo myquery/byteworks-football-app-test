@@ -313,114 +313,62 @@
     color: $bkg;
     display: flex;
     justify-content: center;
-    @media screen and(max-width:$responsive){
-        height:70px;
+
+    .menu-container{
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      width: 70%;
+    .menu-list{
+      width: auto;
+      overflow-y: hidden;
+      overflow-x: auto;
+
+         
+      &::-webkit-scrollbar {
+        width: 1px !important;
+        height: 0;
+      }
     
-        .header-list{
-               width: 100%;
-               position: relative;
-               
-               
-                overflow: hidden;
-               
-               @media screen and(max-width:$responsive){
-                li{
-                 
-                  &:last-child{
-                  input{
-                   
-                      width:120px;
-                      left:65%;
-                      position: absolute;
-                    }
-                    i{
-                      margin-top:2%;
-                      left:90%;
-                      position: absolute;
-                    }
-                  }
-                 }
-               }
-               li{
-                &:last-child{
-                input{
-                 
-                 
-                    position: absolute;
-                  }
-                  i{
-                    margin-top:2%;
-                
-                    position: absolute;
-                  }
-                }
-               }
-          }
-    }
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
     
+      &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+      }
+      
     .header-list{
+    
         width: 70%;
         max-width: 100%;
         height: 38px;
         padding-left: 10px !important;
-        overflow-x: auto;
-        overflow-y: hidden;
-        @media screen and(max-width:$responsive){
-        width: 100%;
-        overflow-x: auto;;
-      
-    
        
-    }
- 
-  
-      
         li{
-          &:nth-last-child(1){
-          
-            clear: both;
-            position: absolute;
-            top: 30%;
-            right:20%
-       
-        }
-            @media screen and(max-width:400px){
-                font-size: 0.6rem;
-                height: auto;
-                padding: 0.5rem 0.5rem;
-                border:none;
-                &:nth-last-child(1){
-                    border:none;
-                    clear: both;
-                    position: absolute;
-                    top: 30%;
-                    right:20%
-               
-                }
-               
-            }
-         
-           
+            
+            //width: 100%;
             list-style: none;
             display: inline-block;
-            padding: 0.8% 2%;
+            padding: 1.5% 2%;
             border-left:1px solid $border-line;
             font-weight: 600;
             font-size: 11.5px;
             color: $bkg;
-            // position: relative;
             text-decoration: none;
             transition-duration: 0.5s;
-             &:nth-last-child(1){
-                border-right:1px solid $border-line;
-                width: 24%;
-                @media screen and(max-width:400px){
-                    border: none;
-                  // width: 24%;
-                }
-
-               
+         a {
+              color: $bkg;
+              text-decoration: none;
+              &:hover {
+                //   background: red;
+                  cursor: pointer;
+                  
+              }
             }
+            
+         
+    
 
            ul{
             width: 70%;
@@ -454,32 +402,36 @@
                     border-bottom: 1px solid $border-line;
                     font-weight: bolder;
                 }
+
+                //dropdowm menu
+        a {
+          text-decoration: none;
+        }
+        
+        nav {
+            font-family: monospace;
+        }
+        
+                 
+        li a {
+          color: $bkg;
+        }
+        
+        li:hover {
+          //   background: red;
+            cursor: pointer;
+            
+        }
+     
                }
 
               
            } 
 
          
-            .search {
-                padding: 0px;
-              }
+        
               
-              input {
-                border: none;
-                color: white;
-                font-size: 14px;
-                width:100%;
-                max-width: 100%;
-                @media screen and (max-width: 400px){
-                    border:none;
-                    float: right;
-                }
-              }
-              
-              .fa-search {
-                position: relative;
-                left: -20px;
-              }
+          
 
             ul{
                 //text-align: center;
@@ -500,56 +452,116 @@
    // }
         //end drop-list
     }
-  
 
-        //dropdowm menu
-        a {
-            text-decoration: none;
-          }
-          
-          nav {
-              font-family: monospace;
-          }
-          
-                   
-          li a {
-            color: $bkg;
-          }
-          
-          li:hover {
-            //   background: red;
-              cursor: pointer;
-              
-          }
-          
-          ul li ul {
-              background: $white;
-              visibility: hidden;
-              opacity: 0;
-              min-width: 50rem;
-              height:18rem;
-              position: absolute;
-              transition: all 0.5s ease;
-              margin-top: 0.9rem;
-              left: -5.5rem;
-              display: none;
-              border-bottom: 2px solid $currecy;
-              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-              padding: 20px;
-              margin-left: 21%;
-              z-index: 999;
-           
-          }
-          
-          ul li:hover > ul,
-          ul li ul:hover {
-            visibility: visible;
-            opacity: 1;
-            display: block;
-          }
-          
-          ul li ul li {
-              clear: both;
-            width: 100%;
-          }
+    ul li {
+      ul {
+        background: $white;
+        visibility: hidden;
+        opacity: 0;
+        min-width: 50rem;
+        height: 18rem;
+        position: absolute;
+        transition: all 0.5s ease;
+        margin-top: 0.89rem;
+        left: -5.5rem;
+        display: none;
+        border-bottom: 2px solid $currecy;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        margin-left: 21%;
+        z-index: 999;
+      }
+    
+      &:hover > ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+    
+      ul {
+        &:hover {
+          visibility: visible;
+          opacity: 1;
+          display: block;
+        }
+    
+        li {
+          clear: both;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .search {
+    padding: 6px;
+    border-right:1px solid $border-line;
+    margin-left: 20px;
+      
+  input {
+    border: none;
+    color: white;
+    font-size: 14px;
+    width:100%;
+    max-width: 100%;
+    padding-left: 10px;
+
+  }
+  .fa-search {
+    position: relative;
+    right: 8%;
+    top: 2%;
+  }
+
+  @media screen and (max-width: $responsive){
+    margin-left: 5px;     
+  input {
+    border: none;
+    color: white;
+    font-size: 0.8rem;
+    width:100%;
+    max-width: 100%;
+    padding-left: 1px;
+
+  }
+    .fa-search {
+      position: relative;
+      right: 20%;
+      top: 2%;
+    }
+  }
+  }
+
+}
+
+        
+              @media screen and(max-width:$responsive){
+                .menu-container{
+                  width: 100%;
+                  .menu-list{
+                    overflow-y: hidden;
+                    overflow-x: auto;
+                  
+    
+                .header-list{
+                      width: 100%;
+                      position: relative;
+                      font-size: 1rem;
+                      
+                      // @media screen and(max-width:$responsive){
+                        li{
+                          padding: 3% 2%;
+                          font-size: 0.7rem;
+
+                        
+                          
+                      
+                        }
+                      // }
+                
+                  }
+        }
+        }
+    }
+
+  
 }
