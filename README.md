@@ -10,13 +10,12 @@
     Used a Sass library with .scss extension to apply styling
 
 # Redux Pattern Architecture
-    Implmented redux pattern architecture using 
-    Rxjs and Angular Dependency Injection, i attempted to use redux-observable
-    but because time constraint, I abandoned it.
+    Implmented redux pattern architecture using redux-observable
+ 
 
 # FontAwesome Library
     I used fontawesome to apply icons
-    I used angular-redux/store ^3.0 version
+    I used angular-redux/store 
 
 
 # Angular Framework
@@ -33,4 +32,3 @@
 
     the redux team acknowledges this bug, so to serve the app, ticker with the app.module.ts like say try saving the file a second time after serving it of which the above error will show.
 
-    
