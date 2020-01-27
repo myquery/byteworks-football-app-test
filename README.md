@@ -24,11 +24,5 @@
 # Responsiveness
     Laptop and mobile phone target for now
 
-# Redux Version Issue
-    ERROR in ../node_modules/@angular-redux/store/components/ng-redux.d.ts:10:31 - error TS2420: Class 'NgRedux' incorrectly implements interface 'ObservableStore'.
-    Property '[Symbol.observable]' is missing in type 'NgRedux' but required in type 'ObservableStore'.
 
-    10 export declare abstract class NgRedux implements ObservableStore 
-
-    the redux team acknowledges this bug, so to serve the app, ticker with the app.module.ts like say try saving the file a second time after serving it of which the above error will show.
 
