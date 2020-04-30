@@ -25,7 +25,7 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.4.1",
     "eslint": "^5.16.0",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
